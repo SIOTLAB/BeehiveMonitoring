@@ -1,0 +1,32 @@
+{
+  "name": "beehive-webapp",
+  "version": "1.0.0",
+  "description": "dashboard web application for beehive monitor system",
+  "main": "server.js",
+  "scripts": {
+    "start": "node backend/server.js",
+    "server": "nodemon backend/server.js",
+    "client": "npm start --prefix frontend",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "frontend": "npm install --prefix frontend",
+    "yayaya": "concurrently \"npm install\" \"npm run frontend\"",
+    "preinstall": "npx npm-force-resolutions",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix frontend --legacy-peer-deps && npm run build --prefix frontend --legacy-peer-deps"
+  },
+  "author": "Collin Paiz",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "colors": "^1.4.0",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "express-async-handler": "^1.2.0",
+    "jsonwebtoken": "^9.0.0",
+    "mongoose": "^6.9.2",
+    "react-stickynode": "^4.1.0"
+  },
+  "devDependencies": {
+    "concurrently": "^7.6.0",
+    "nodemon": "^2.0.20"
+  }
+}
